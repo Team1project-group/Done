@@ -1,0 +1,33 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 9898
+spring:
+  application:
+    name: CreditManager
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888/
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/CarLoanCreditManager
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    management:
+  endpoint:
+    web:
+      exposure:
+        include:'*' 
+  mvc:
+    view:
+      suffix: .jsp
